@@ -2,53 +2,38 @@
 A line-following robot is an autonomous vehicle designed to navigate along a predefined path, typically a black line on a white surface. This robot utilizes infrared (IR) sensors to detect the line and adjusts its movement accordingly
 
 🔧 Hardware Components
-Microcontroller
-The brain of the robot. Usually an Arduino UNO or Nano. You can go advanced with an ESP32 for extra features like Wi-Fi or Bluetooth.
+Arduino UNO – Main controller of the robot
 
-IR Sensors
-These are the robot’s eyes. They detect the contrast between the black line and the white surface. TCRT5000 modules are commonly used.
+IR Sensors (TCRT5000) – Detects black line on white surface
 
-Motor Driver Module
-Acts like the muscles' control center. It receives commands from the microcontroller and tells the motors when and how to move. Common ones include L298N or L293D.
+L298N Motor Driver – Controls direction and speed of motors
 
-DC Motors
-The driving force (literally). Two BO motors are typically used to move the wheels.
+2 BO DC Motors – Drives the robot wheels
 
-Chassis
-The body or frame where all components are mounted. You can use an acrylic sheet, 3D printed base, or even a wooden board if you're feeling crafty.
+Chassis Frame – Holds all components together
 
-Wheels
-Mounted onto the motors, they let the robot roll around. Rubber ones are preferred for better grip.
+Rubber Wheels – Ensures grip and smooth movement
 
-Power Supply
-A 9V battery or a rechargeable Li-ion battery pack powers the whole system. If you’re using ESP32, a power bank via USB works great too.
+9V Battery / Li-ion Pack – Powers the robot and electronics
 
-Other Accessories
-Jumper wires, a breadboard or PCB, an on/off switch, and optionally, a buzzer (for dramatic beeping when it veers off the line 😎).
+Jumper Wires, Switch, Buzzer (optional) – For connections and alerts
 
 🌟 Key Features
-Detects and follows a black line on a white surface (or vice versa).
+Follows black line on white surface
 
-Uses real-time sensor feedback to adjust motor direction.
+Real-time path correction
 
-Beginner-friendly, quick to prototype, and totally scalable.
+Beginner-friendly and reliable
 
-Works even with basic logic, but can be upgraded to include advanced features.
+Expandable with extra sensors or wireless modules
 
-Smooth operation with proper tuning (or hilariously chaotic if you don’t – great for a laugh).
+🔍 How It Works
+IR sensors detect black or white surface
 
-🔍 How It Works – Step by Step
-Sensing the Line
-The IR sensors continuously emit infrared light. When that light hits a white surface, it reflects back. If it hits a black line, it gets absorbed. This gives a digital output – 1 for white, 0 for black.
+Arduino UNO reads sensor data as digital input
 
-Reading the Inputs
-The microcontroller checks the sensor values constantly. Based on the combination of left and right sensor readings, it determines whether the robot is centered on the line, drifting left, or drifting right.
+Logic determines direction based on sensor values
 
-Controlling the Movement
-If both sensors detect black, the robot moves forward.
-If the left sensor detects white and the right detects black, it turns right.
-If the right sensor detects white and the left detects black, it turns left.
-If both sensors see white (line lost!), it stops or performs a search maneuver.
+Motor driver activates motors accordingly
 
-Real-Time Correction
-This checking and adjusting happens many times per second. That’s what lets the robot follow even curved paths.
+Robot adjusts direction to stay on the line
