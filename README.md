@@ -2,38 +2,38 @@
 A line-following robot is an autonomous vehicle designed to navigate along a predefined path, typically a black line on a white surface. This robot utilizes infrared (IR) sensors to detect the line and adjusts its movement accordingly
 
 🔧 Hardware Components
-Arduino UNO – Main controller of the robot
+Arduino UNO – Main controller
 
-IR Sensors (TCRT5000) – Detects black line on white surface
+2 IR Sensors – Detect black line and surface edges
 
-L298N Motor Driver – Controls direction and speed of motors
+L298N Motor Driver – Controls motor direction and speed
 
-2 BO DC Motors – Drives the robot wheels
+2 BO DC Motors – Drive the robot
 
-Chassis Frame – Holds all components together
+Chassis Frame – Mounts components
 
-Rubber Wheels – Ensures grip and smooth movement
+Rubber Wheels – Provide traction
 
-9V Battery / Li-ion Pack – Powers the robot and electronics
+9V Battery / Li-ion Pack – Powers the system
 
 Jumper Wires, Switch, Buzzer (optional) – For connections and alerts
 
 🌟 Key Features
-Follows black line on white surface
+Line detection using 2 IR sensors
 
-Real-time path correction
+Real-time directional correction
 
-Beginner-friendly and reliable
+Basic but effective path following
 
-Expandable with extra sensors or wireless modules
+Great for learning embedded systems
 
-🔍 How It Works
-IR sensors detect black or white surface
+🔍 How It Works (2 IR Sensor Logic)
+Both sensors on white – Robot stops or searches for line
 
-Arduino UNO reads sensor data as digital input
+Left sensor on black, right on white – Robot turns left
 
-Logic determines direction based on sensor values
+Right sensor on black, left on white – Robot turns right
 
-Motor driver activates motors accordingly
+Both sensors on black – Robot moves forward
 
-Robot adjusts direction to stay on the line
+Arduino constantly checks sensor values and sends commands to the motor driver to adjust wheel movements.
