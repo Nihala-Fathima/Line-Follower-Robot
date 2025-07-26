@@ -27,7 +27,7 @@ Basic but effective path following
 
 Great for learning embedded systems
 
-🔍 How It Works (2 IR Sensor Logic)
+🔍 How It Works 
 Both sensors on white – Robot stops or searches for line
 
 Left sensor on black, right on white – Robot turns left
