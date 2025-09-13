@@ -1,4 +1,4 @@
-// 🚀 Line Follower Robot – Arduino UNO + 2 IR Sensors
+// Line Follower Robot – Arduino UNO + 2 IR Sensors
 
 // Motor pins
 const int motorLeftForward  = 2;
